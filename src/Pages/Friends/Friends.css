@@ -1,0 +1,176 @@
+.friends-page {
+    width: 100%;
+
+    height: 100%;
+
+    background: var(--bg-color);
+
+    padding: 20px;
+
+    overflow-y: auto;
+}
+
+.friends-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+}
+
+.friends-header h4 {
+    color: var(--text-color);
+
+    margin: 0;
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+.friends-back-btn {
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: transparent;
+
+    color: var(--text-color);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+.friends-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+.friends-card {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 16px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.friends-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.friends-user img {
+    width: 56px;
+
+    height: 56px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.friends-user h6 {
+    margin: 0 0 4px;
+
+    color: var(--text-color);
+
+    font-size: 15px;
+}
+
+.friends-user span {
+    color: #9ca3af;
+
+    font-size: 13px;
+}
+
+.remove-friend-btn {
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 14px;
+
+    background: rgba(239, 68, 68, 0.12);
+
+    color: #ef4444;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.remove-friend-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.friends-empty {
+    height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #6b7280;
+
+    gap: 14px;
+}
+
+.friends-empty i {
+    font-size: 52px;
+}
+
+html[dir="rtl"] .friends-back-btn i {
+    transform: rotate(180deg);
+}
+
+.confirm-modal {
+    background: var(--card-color);
+
+    border: 1px solid var(--border-color);
+
+    box-shadow: 0 12px 40px var(--shadow-color);
+}
+
+.confirm-modal h4 {
+    color: var(--text-color);
+    text-align: center;
+}
+
+.confirm-modal p {
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.cancel-btn {
+    background: var(--card-secondary);
+    color: var(--text-color);
+}
