@@ -221,7 +221,6 @@ const Home = ({ theme, setTheme }) => {
     const [favoriteIds, setFavoriteIds] = useState([]);
     const [activeFilter, setActiveFilter] = useState("all");
     const [search, setSearch] = useState("");
-    const [favorites, setFavorites] = useState([]);
     const [chatList, setChatList] = useState(chats);
     const [showProfile, setShowProfile] = useState(false);
     const [showEditProfile, setShowEditProfile] = useState(false);
@@ -335,19 +334,19 @@ const Home = ({ theme, setTheme }) => {
         );
     };
 
-    const acceptFriendRequest = (id) => {
-        setChatList((prev) =>
-            prev.map((chat) =>
-                chat.id === id
-                    ? {
-                          ...chat,
-                          isFriend: true,
-                          isRequested: false,
-                      }
-                    : chat,
-            ),
-        );
-    };
+    // const acceptFriendRequest = (id) => {
+    //     setChatList((prev) =>
+    //         prev.map((chat) =>
+    //             chat.id === id
+    //                 ? {
+    //                       ...chat,
+    //                       isFriend: true,
+    //                       isRequested: false,
+    //                   }
+    //                 : chat,
+    //         ),
+    //     );
+    // };
 
     const handleAcceptRequest = (id) => {
         setChatList((prev) =>
@@ -431,11 +430,11 @@ const Home = ({ theme, setTheme }) => {
             }),
     ];
 
-    const filteredUsers = mergedUsers.filter(
-        (user) =>
-            user.name.toLowerCase().includes(search.toLowerCase()) ||
-            user.username.toLowerCase().includes(search.toLowerCase()),
-    );
+    // const filteredUsers = mergedUsers.filter(
+    //     (user) =>
+    //         user.name.toLowerCase().includes(search.toLowerCase()) ||
+    //         user.username.toLowerCase().includes(search.toLowerCase()),
+    // );
 
     const chatsWithLastMessage = mergedUsers
         .map((user) => {

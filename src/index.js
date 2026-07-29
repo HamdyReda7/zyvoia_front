@@ -8,7 +8,6 @@ import ForgotPassword from './Pages/auth/ForgotPassword';
 import VerifyCode from './Pages/auth/VerifyCode';
 import ResetPassword from './Pages/auth/ResetPassword';
 import Home from './Pages/home/Home';
-import Profile from './Pages/Profile/Profile';
 
 import "./i18n";
 const router = createBrowserRouter([

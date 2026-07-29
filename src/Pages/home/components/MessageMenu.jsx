@@ -1,19 +1,4 @@
 import React from "react";
-import {
-    FaHeart,
-    FaThumbsUp,
-    FaFire,
-    FaFaceLaugh,
-    FaFaceSadTear,
-    FaFaceSurprise,
-    FaFaceAngry,
-    FaFaceKissWinkHeart,
-    FaFaceGrinHearts,
-    FaFaceSadCry,
-    FaFaceMehBlank,
-    FaThumbsDown,
-    FaFaceLaughSquint,
-} from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 
 const MessageMenu = ({
@@ -31,7 +16,6 @@ const MessageMenu = ({
 }) => {
     const { t } = useTranslation("chat");
 
-    const [showEmojiPicker, setShowEmojiPicker] = React.useState(false);
     const isImageMessage = !!message?.image;
 
     const isVoiceMessage = !!message?.voice;

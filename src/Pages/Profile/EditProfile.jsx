@@ -45,17 +45,7 @@ const EditProfile = ({ goBack, currentUser, setCurrentUser }) => {
         });
     };
 
-    const handleImage = (e) => {
-        const file = e.target.files[0];
 
-        if (file) {
-            setFormData((prev) => ({
-                ...prev,
-
-                image: URL.createObjectURL(file),
-            }));
-        }
-    };
 
     const handleUpdate = () => {
         if (

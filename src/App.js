@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { apivalue } from "./Data/AllData";
+import {  useEffect, useState } from "react";
 import Login from "./Pages/auth/Login";
 import "./theme.css";
 
@@ -12,7 +11,6 @@ function App() {
         localStorage.setItem("theme", theme);
     }, [theme]);
 
-    const data = useContext(apivalue);
     return (
         <div>
             <Login theme={theme} setTheme={setTheme} />{" "}

@@ -24,18 +24,12 @@ const MessageInput = ({
     const { t } = useTranslation("chat");
 
     const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-    const [showAttachMenu, setShowAttachMenu] = useState(false);
+    const [ setShowAttachMenu] = useState(false);
 
     const fileInputRef = useRef(null);
     const inputRef = useRef(null);
 
-    const handleImageSelect = (e) => {
-        const file = e.target.files[0];
 
-        if (!file) return;
-
-        setSelectedImage(URL.createObjectURL(file));
-    };
 
     const emojis = [
         "😀",

@@ -6,8 +6,6 @@ import Cropper from "react-easy-crop";
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    const [profileImage, setProfileImage] = useState(null);
-    const [preview, setPreview] = useState(null);
     const [image, setImage] = useState(null);
 
     const [crop, setCrop] = useState({
@@ -78,7 +76,7 @@ const Register = () => {
                         </div>
 
                         <p className="upload-text mt-3">
-                            {profileImage
+                            {image
                                 ? "Profile picture uploaded successfully"
                                 : "Upload Profile Picture"}
                         </p>

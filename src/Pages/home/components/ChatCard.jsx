@@ -1,77 +1,76 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
-
 const ChatCard = ({ chat, onClick, toggleFriendRequest }) => {
-        const { t } = useTranslation("chat");
-    
-    return (
-        <div className="chat-card" onClick={onClick}>
-            {/* Image */}
+  const { t } = useTranslation("chat");
 
-            <div className="chat-avatar-wrapper">
-                <img src={chat.image} alt="" className="chat-avatar" />
+  return (
+    <div className="chat-card" onClick={onClick}>
+      {/* Image */}
 
-                {chat.online && <span className="online-dot"></span>}
-            </div>
+      <div className="chat-avatar-wrapper">
+        <img src={chat.image} alt="" className="chat-avatar" />
 
-            {/* Info */}
+        {chat.online && <span className="online-dot"></span>}
+      </div>
 
-            <div className="chat-info">
-                <div className="chat-top">
-                    <div className="chat-name-box">
-                        <h6>{chat.name}</h6>
+      {/* Info */}
 
-                        {chat.isFriend ? (
-                            <i
-                                className="fa-solid fa-user-group friend-icon"
-                                title="Friend"
-                            ></i>
-                        ) : chat.isRequested ? (
-                            <i
-                                className="fa-solid fa-xmark cancel-request-icon"
-                                title="Cancel Request"
-                                onClick={(e) => {
-                                    e.stopPropagation();
+      <div className="chat-info">
+        <div className="chat-top">
+          <div className="chat-name-box">
+            <h6>{chat.name}</h6>
 
-                                    toggleFriendRequest(chat.id);
-                                }}
-                            ></i>
-                        ) : (
-                            <i
-                                className="fa-solid fa-user-plus add-friend-icon"
-                                title="Add Friend"
-                                onClick={(e) => {
-                                    e.stopPropagation();
+            {chat.isFriend ? (
+              <i
+                className="fa-solid fa-user-group friend-icon"
+                title="Friend"
+              ></i>
+            ) : chat.isRequested ? (
+              <i
+                className="fa-solid fa-xmark cancel-request-icon"
+                title="Cancel Request"
+                onClick={(e) => {
+                  e.stopPropagation();
 
-                                    toggleFriendRequest(chat.id);
-                                }}
-                            ></i>
-                        )}
-                    </div>
+                  toggleFriendRequest(chat.id);
+                }}
+              ></i>
+            ) : (
+              <i
+                className="fa-solid fa-user-plus add-friend-icon"
+                title="Add Friend"
+                onClick={(e) => {
+                  e.stopPropagation();
 
-                    <span>{chat.time}</span>
-                </div>
+                  toggleFriendRequest(chat.id);
+                }}
+              ></i>
+            )}
+          </div>
 
-                <div className="chat-bottom">
-                    <p>
-                        {chat.mineLast ? (
-                            <>
-                                <i className="fa-solid fa-check-double message-sent-icon"></i>
-                                {t("Sent")}
-                            </>
-                        ) : (
-                            t("Newmessage")
-                        )}
-                    </p>
-
-                    {!chat.mineLast && chat.unread > 0 && (
-                        <div className="unread-badge">{chat.unread}</div>
-                    )}
-                </div>
-            </div>
+          <span>{chat.time}</span>
         </div>
-    );
+
+        <div className="chat-bottom">
+          <p>
+            {chat.mineLast ? (
+              <>
+                <i className="fa-solid fa-check-double message-sent-icon"></i>
+                {t("Sent")}
+              </>
+            ) : (
+              t("Newmessage")
+            )}
+          </p>
+
+          {!chat.mineLast && chat.unread > 0 && (
+            <div className="unread-badge">{chat.unread}</div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ChatCard;
